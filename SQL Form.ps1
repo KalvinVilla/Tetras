@@ -42,8 +42,9 @@ function Clear-Input() {
 <# LOAD ASSEMBLY #>
 [void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
 [void][System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
-Add-Type -Path "D:\dllx64\System.Data.SQLite.DLL"
-$connexionDatabase = "Data Source=D:\sqlform.db"
+Write-Host $PSScriptRoot
+Add-Type -Path "$PSScriptRoot\System.Data.SQLite.DLL"
+$connexionDatabase = "Data Source=$PSScriptRoot\sqlform.db"
 
 $connexion = New-Object System.Data.SQLite.SQLiteConnection($connexionDatabase)
 $connexion.Open()
@@ -101,7 +102,7 @@ $userSurnameLayout.Dock = [System.Windows.Forms.DockStyle]::Fill
 
 #NAME
 $userAgeLabel = New-Object System.Windows.Forms.Label;
-$userAgeLabel.Text = "Nom :"
+$userAgeLabel.Text = "Age :"
 
 $userAgeTextBox = New-Object System.Windows.Forms.TextBox;
 
