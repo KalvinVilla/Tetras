@@ -1,6 +1,6 @@
 # Chiffrer gros fichier
 
-#PRE REQUIS
+## PRE REQUIS
 CELUI QUI RECOIT LE FICHIER CHIFFRER DOIT AVOIR GENERER UNE CLE PRIVEE ET UNE CLE PUBLIQUE
 ```
 openssl genrsa -out <private key> 2048
@@ -8,7 +8,7 @@ openssl rsa -in <private key> -pubout -out <public key>
 ```
 
 
-# CHIFFRER
+##  CHIFFRER
 
 FICHIER A RECUPERER POUR CHIFFRER (<public_key du binome>)
 CETTE CLE EST OBLIGATOIRE POUR CHIFFRER ET QUE VOTRE BINOME PUISSE DECHIFFRER  
@@ -31,7 +31,7 @@ CHIFFRE LE MOT DE PASSE
 openssl rsautl -in password -out <crypted_password> -inkey <public key> -pubin -encrypt
 ```
 
-# DECHIFFRER 
+## DECHIFFRER 
 FICHIER A RECUPERER POUR TESTER LES FICHIERS (<crypted_file, crypted_password>)
 ```
 scp <user>@<ip>:/<repertoire> <mon_repertoire>
