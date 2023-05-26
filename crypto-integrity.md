@@ -42,7 +42,7 @@ openssl dgdt -sha1 <file>
 
 PERMET DE VERIFIER SI LA SIGNATURE A CHANGER ET DONC SI LE FICHIER A ETE MODIFIER
 ```
-openssl rsault -verify -in <signature> -inkey <public key> -pubin
+openssl rsautl -verify -in <signature> -inkey <public key> -pubin
 ```
 
   
